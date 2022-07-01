@@ -5,6 +5,7 @@ import { create as createPost } from "../../../src/services/users";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../../src/components/Input";
+import ToolbarPost from "../../components/ToolbarPost";
 
 // CSS
 import "./CreatePost.css";
@@ -70,30 +71,29 @@ export default function CreatePost() {
 
   return (
     <div className="create-post-container">
-      <form onSubmit={handleSubmit}>
-        <nav className="navbar navbar-default navbar-fixed-top">
-          <div className="container-fluid">
-            <div>
-              <img
-                id="LogoNB"
-                src="/devto/public/logo192.png"
-                width="60px"
-                alt="Logo"
-              />
+      <nav className="navbar navbar-default navbar-fixed-top">
+        <div className="container-fluid">
+          <div>
+            <img
+              id="LogoNB"
+              src="/devto/public/logo192.png"
+              width="60px"
+              alt="Logo"
+            />
 
-              <p>Create Post</p>
-            </div>
-            <div>
-              <button id="LoginNB" className="btn FGray " type="button">
-                Edit
-              </button>
-              <button id="CreateANB" className="btn FBold" type="button">
-                Preview
-              </button>
-            </div>
+            <p>Create Post</p>
           </div>
-        </nav>
-
+          <div>
+            <button id="LoginNB" className="btn FGray " type="button">
+              Edit
+            </button>
+            <button id="CreateANB" className="btn FBold" type="button">
+              Preview
+            </button>
+          </div>
+        </div>
+      </nav>
+      <form onSubmit={handleSubmit}>
         <Input
           className="form-control-title"
           name="title"
@@ -102,7 +102,6 @@ export default function CreatePost() {
           value={title}
           callback={(e) => setTitle(e.target.value)}
         />
-
         <Input
           className="form-control-hashtag"
           name="hastags"
@@ -111,7 +110,7 @@ export default function CreatePost() {
           value={hashtags}
           callback={(e) => setHashtags(e.target.value)}
         />
-
+        <ToolbarPost />
         <Input
           className="form-control-fullpost"
           name="fullPost"
@@ -128,7 +127,6 @@ export default function CreatePost() {
           value={imgPost}
           callback={(e) => setImgPost(e.target.value)}
         />
-
         <button
           onClick={handleSubmit2}
           id="publish-post"
