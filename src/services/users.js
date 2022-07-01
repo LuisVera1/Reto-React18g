@@ -8,20 +8,20 @@ const generateConfig = (body) => {
   };
 };
 
-export const create = async (body) => {
+export const createUser = async (body) => {
   const requestConfig = generateConfig(body);
   const response = await fetch(
-    "https://poised-shift-162315-default-rtdb.firebaseio.com/.json",
+    "https://poised-shift-162315-default-rtdb.firebaseio.com/users/.json",
     requestConfig
   );
   const data = await response.json();
   return data;
 };
 
-export const createUser = async (body) => {
+export const create = async (body) => {
   const requestConfig = generateConfig(body);
   const response = await fetch(
-    "https://poised-shift-162315-default-rtdb.firebaseio.com/users/.json",
+    "https://poised-shift-162315-default-rtdb.firebaseio.com/.json",
     requestConfig
   );
   const data = await response.json();
