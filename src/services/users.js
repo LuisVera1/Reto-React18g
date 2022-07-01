@@ -11,7 +11,7 @@ const generateConfig = (body) => {
 export const create = async (body) => {
   const requestConfig = generateConfig(body);
   const response = await fetch(
-    "https://poised-shift-162315-default-rtdb.firebaseio.com/",
+    "https://poised-shift-162315-default-rtdb.firebaseio.com/.json",
     requestConfig
   );
   const data = await response.json();
@@ -28,7 +28,7 @@ export const retrieve = async (id) => {
 
 export const list = async () => {
   const response = await fetch(
-    `https://poised-shift-162315-default-rtdb.firebaseio.com/`
+    `https://poised-shift-162315-default-rtdb.firebaseio.com/.json`
   );
   const data = await response.json();
   return data;
