@@ -1,30 +1,37 @@
 import { useState } from "react";
-import { create as createPost } from "../../../services/users";
+import { create as createPost } from "../../../src/services/users";
 
 // Toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Input from "../../../components/Input";
+import Input from "../../../src/components/Input";
 
 // CSS
 import "./CreatePost.css";
 
 export default function CreatePost() {
   // Local state
-  //const [autorName, setAutorName] = useState("");
+  const [autorName, setAutorName] = useState("");
   const [title, setTitle] = useState("");
-  const [hashtags, setHashtags] = useState("");
+  const [hashtags, setHashtags] = useState([]);
   const [fullPost, setFullPost] = useState("");
-  //const [reactions, setReactions] = useState("");
+  const [reactions, setReactions] = useState("");
   const [imgPost, setImgPost] = useState("");
-  //const [date, setDate] = useState("");
-  //const [coments, setImgComents] = useState("");
+  const [date, setDate] = useState("");
+  const [coments, setComents] = useState([]);
 
   const cleanForm = () => {
     setTitle("");
     setHashtags("");
     setFullPost("");
     setImgPost("");
+  };
+
+  const handleSubmit2 = () => {
+    setAutorName("Nestor Ramirez");
+    setDate(new Date());
+    setReactions(6);
+    setComents("Genial");
   };
 
   const isEmpty = (value) => !value;
@@ -46,6 +53,10 @@ export default function CreatePost() {
       hashtags,
       fullPost,
       imgPost,
+      autorName,
+      reactions,
+      date,
+      coments,
     };
 
     try {
@@ -58,52 +69,51 @@ export default function CreatePost() {
   };
 
   return (
-    <div>
-      <nav className="navbar navbar-default navbar-fixed-top">
-        <div className="container-fluid">
-          <div>
-            <img
-              id="LogoNB"
-              src="/devto/public/logo192.png"
-              width="60px"
-              alt="Logo"
-            />
+    <div className="create-post-container">
+      <form onSubmit={handleSubmit}>
+        <nav className="navbar navbar-default navbar-fixed-top">
+          <div className="container-fluid">
+            <div>
+              <img
+                id="LogoNB"
+                src="/devto/public/logo192.png"
+                width="60px"
+                alt="Logo"
+              />
 
-            <p>Create Post</p>
+              <p>Create Post</p>
+            </div>
+            <div>
+              <button id="LoginNB" className="btn FGray " type="button">
+                Edit
+              </button>
+              <button id="CreateANB" className="btn FBold" type="button">
+                Preview
+              </button>
+            </div>
           </div>
-          <div>
-            <button id="LoginNB" className="btn FGray " type="submit">
-              Edit
-            </button>
-            <button id="CreateANB" className="btn FBold" type="submit">
-              Preview
-            </button>
-          </div>
-        </div>
-      </nav>
-      <div className="">
+        </nav>
+
         <Input
-          className="form-control form-control-lg"
+          className="form-control-title"
           name="title"
           placeholder="New post title here..."
           id="floatingTextareaTitle"
           value={title}
           callback={(e) => setTitle(e.target.value)}
         />
-      </div>
-      <div className="">
+
         <Input
-          className="form-control"
+          className="form-control-hashtag"
           name="hastags"
           placeholder="Add up to 4 tags..."
           id="floatingTextareaTags"
           value={hashtags}
           callback={(e) => setHashtags(e.target.value)}
         />
-      </div>
-      <div className="">
+
         <Input
-          className="form-control"
+          className="form-control-fullpost"
           name="fullPost"
           placeholder="Write your post content here..."
           id="floatingTextareaText"
@@ -111,17 +121,20 @@ export default function CreatePost() {
           callback={(e) => setFullPost(e.target.value)}
         />
         <Input
-          className="form-control"
+          className="form-control-image"
           name="fullPost"
-          placeholder="Add an URL link..."
+          placeholder="Add a cover image URL link..."
           id="floatingTextareaText"
           value={imgPost}
           callback={(e) => setImgPost(e.target.value)}
         />
-      </div>
 
-      <nav>
-        <button id="publish-post" type="button" className="btn btn-primary">
+        <button
+          onClick={handleSubmit2}
+          id="publish-post"
+          type="submit"
+          className="btn btn-primary"
+        >
           Publish
         </button>
         <button
@@ -145,7 +158,8 @@ export default function CreatePost() {
         >
           Revert new changes
         </button>
-      </nav>
+      </form>
+      <ToastContainer />
     </div>
   );
 }
