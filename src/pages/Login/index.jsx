@@ -42,16 +42,13 @@ export default function Login() {
 
   return (
     <div>
-      <div
-        className="container"
-        style={{ background: "lightgray", marginTop: 20, padding: 20 }}
-      >
+      <div className="container">
         <form className="form_login">
           <div>
-            <h1 style={{ color: "blue", textalign: "center" }}>LOGIN</h1>
+            <h1 className="titleLogin">LOGIN</h1>
             <div>Username</div>
             <Input
-              className="form-control-title"
+              className="form-control-user"
               name="user"
               type="email"
               placeholder="Usuario"
@@ -63,7 +60,7 @@ export default function Login() {
           <div>
             <div>Password</div>
             <Input
-              className="form-control-title"
+              className="form-control-password"
               name="password"
               placeholder="Password"
               id="floatingTextareaTitle"
@@ -75,7 +72,7 @@ export default function Login() {
           <button
             type="submit"
             onClick={onLogin}
-            className="btn btn-primary"
+            className="button-login"
             value="Login"
           >
             Suscribete

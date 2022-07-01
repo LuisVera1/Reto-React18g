@@ -1,3 +1,35 @@
 div {
   font-size: 2rem;
 }
+.container {
+  margin-top: 30px;
+  padding: 20px;
+  height: 700px;
+  background: rgb(54, 138, 214);
+  background: linear-gradient(
+    90deg,
+    rgba(54, 138, 214, 1) 24%,
+    rgba(0, 151, 255, 0.9528186274509804) 61%
+  );
+}
+
+.form-control-user {
+  border-radius: 10px;
+}
+
+.form-control-password {
+  border-radius: 10px;
+}
+
+.titleLogin {
+  color: black;
+  text-align: "center";
+  font-weight: 700;
+}
+.form_login {
+  color: white;
+}
+
+.button-login {
+  border-radius: 10px;
+}
