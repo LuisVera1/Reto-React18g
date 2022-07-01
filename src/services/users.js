@@ -18,6 +18,16 @@ export const create = async (body) => {
   return data;
 };
 
+export const createUser = async (body) => {
+  const requestConfig = generateConfig(body);
+  const response = await fetch(
+    "https://poised-shift-162315-default-rtdb.firebaseio.com/users/.json",
+    requestConfig
+  );
+  const data = await response.json();
+  return data;
+};
+
 export const retrieve = async (id) => {
   const response = await fetch(
     `https://poised-shift-162315-default-rtdb.firebaseio.com/${id}.json`

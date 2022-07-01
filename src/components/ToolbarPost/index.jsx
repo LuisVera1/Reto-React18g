@@ -1,19 +1,19 @@
 export default function ToolbarPost() {
   return (
     <div
-      class="editor-toolbar relative"
+      className="editor-toolbar relative"
       aria-label="Markdown formatting toolbar"
       role="toolbar"
       aria-controls="article_body_markdown"
     >
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="0"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="0"
         aria-label="Bold"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -21,16 +21,16 @@ export default function ToolbarPost() {
         >
           <path d="M8 11h4.5a2.5 2.5 0 0 0 0-5H8v5Zm10 4.5a4.501 4.501 0 0 1-4.5 4.5H6V4h6.5a4.5 4.5 0 0 1 3.256 7.606A4.5 4.5 0 0 1 18 15.5ZM8 13v5h5.5a2.5 2.5 0 0 0 0-5H8Z"></path>
         </svg>
-        <span data-testid="tooltip" class="crayons-tooltip__content"></span>
+        <span data-testid="tooltip" className="crayons-tooltip__content"></span>
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Italic"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -38,16 +38,16 @@ export default function ToolbarPost() {
         >
           <path d="M15 20H7v-2h2.927l2.116-12H9V4h8v2h-2.927l-2.116 12H15v2Z"></path>
         </svg>
-        <span data-testid="tooltip" class="crayons-tooltip__content"></span>
+        <span data-testid="tooltip" className="crayons-tooltip__content"></span>
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Link"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -55,16 +55,16 @@ export default function ToolbarPost() {
         >
           <path d="M18.364 15.536 16.95 14.12l1.414-1.414a5.001 5.001 0 0 0-3.531-8.551 5 5 0 0 0-3.54 1.48L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 1 1 9.9 9.9l-1.415 1.414zm-2.828 2.828-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607 1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z"></path>
         </svg>
-        <span data-testid="tooltip" class="crayons-tooltip__content"></span>
+        <span data-testid="tooltip" className="crayons-tooltip__content"></span>
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Ordered list"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -75,12 +75,12 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Unordered list"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -91,12 +91,12 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Heading"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -107,12 +107,12 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Quote"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -123,12 +123,12 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Code"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -139,12 +139,12 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Code block"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           height="24"
           viewBox="0 0 24 24"
           width="24"
@@ -155,12 +155,12 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn mr-1"
+        tab-index="-1"
         aria-label="Embed"
       >
         <svg
-          class="crayons-icon"
+          className="crayons-icon"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -168,21 +168,21 @@ export default function ToolbarPost() {
         >
           <path d="M13 9h8L11 24v-9H4l9-15v9Zm-2 2V7.22L7.532 13H13v4.394L17.263 11H11Z"></path>
         </svg>
-        <span data-testid="tooltip" class="crayons-tooltip__content"></span>
+        <span data-testid="tooltip" className="crayons-tooltip__content"></span>
       </button>
       <div
         id="upload-success-info"
         aria-live="polite"
-        class="screen-reader-only"
+        className="screen-reader-only"
       ></div>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn formatter-btn mr-1"
-        tabindex="-1"
+        className="c-btn c-btn--icon-alone crayons-tooltip__activator toolbar-btn formatter-btn mr-1"
+        tab-index="-1"
         aria-label="Upload image"
       >
         <svg
-          class="crayons-icon c-btn__icon"
+          className="crayons-icon c-btn__icon"
           aria-hidden="true"
           focusable="false"
           width="24"
@@ -195,15 +195,15 @@ export default function ToolbarPost() {
       </button>
       <button
         type="button"
-        class="c-btn c-btn--icon-alone toolbar-btn ml-auto hidden m:block"
+        className="c-btn c-btn--icon-alone toolbar-btn ml-auto hidden m:block"
         id="overflow-menu-button"
         aria-expanded="false"
         aria-haspopup="true"
-        tabindex="-1"
+        tab-index="-1"
         aria-label="More options"
       >
         <svg
-          class="crayons-icon c-btn__icon"
+          className="crayons-icon c-btn__icon"
           aria-hidden="true"
           focusable="false"
           width="24"
@@ -212,8 +212,8 @@ export default function ToolbarPost() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M12 17a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm0-7a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm2-5a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"
           ></path>
         </svg>

@@ -10,7 +10,7 @@ import ToolbarPost from "../../components/ToolbarPost";
 // CSS
 import "./CreatePost.css";
 
-export default function CreatePost() {
+export default function Createpost() {
   // Local state
   const [autorName, setAutorName] = useState("");
   const [title, setTitle] = useState("");
