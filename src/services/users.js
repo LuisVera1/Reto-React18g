@@ -11,8 +11,24 @@ const generateConfig = (body) => {
 export const createUser = async (body) => {
   const requestConfig = generateConfig(body);
   const response = await fetch(
-    "https://poised-shift-162315-default-rtdb.firebaseio.com/users/.json",
+    "https://users-devto-default-rtdb.firebaseio.com/.json",
     requestConfig
+  );
+  const data = await response.json();
+  return data;
+};
+
+export const retrieveLogin = async (id) => {
+  const response = await fetch(
+    `https://users-devto-default-rtdb.firebaseio.com/${id}.json`
+  );
+  const data = await response.json();
+  return data;
+};
+
+export const listUsers = async (body) => {
+  const response = await fetch(
+    `https://users-devto-default-rtdb.firebaseio.com/.json`
   );
   const data = await response.json();
   return data;

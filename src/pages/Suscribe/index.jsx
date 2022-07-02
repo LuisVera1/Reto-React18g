@@ -1,50 +1,51 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import React from "react";
-import { listUsers } from "../../services/users";
-import { ToastContainer } from "react-toastify";
+import { createUser } from "../../services/users";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Input from "../../components/Input";
-import { useNavigate } from "react-router-dom";
 
 // CSS
-import "./Login.css";
+import "./Suscribe.css";
 
-export default function Login() {
+export default function Suscribe() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+  const cleanForm = () => {
+    setUser("");
+    setPassword("");
+  };
 
-  useEffect(() => {
-    const list = async () => {
-      const data = await listUsers();
-      const parsedUsers = Object.keys(data).map((key) => {
-        return { id: key, ...data[key] };
-      });
+  const isEmpty = (value) => !value;
 
-      setUser(parsedUsers);
+  const onSuscribe = async (e) => {
+    e.preventDefault();
+    if (isEmpty(user) || isEmpty(password)) {
+      toast.error("Llena el form!!!!");
+      return;
+    }
+
+    const data = {
+      user,
+      password,
     };
-
-    list();
-  }, []);
-
-  const loginUsers = (user, index) => (
-    <div key={index}>
-      <p>
-        {user.user} {user.password}
-      </p>
-
-      <button onClick={() => navigate(user.id)}>Detalle</button>
-    </div>
-  );
+    try {
+      await createUser(data);
+      toast.success("Todo fine!!");
+      cleanForm();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div>
       <div className="container">
         <form className="form_login">
           <div>
-            <h1 className="titleLogin">Login</h1>
+            <h1 className="titleLogin">Suscribete</h1>
             <div>Username</div>
             <Input
               className="form-control-user"
@@ -71,7 +72,7 @@ export default function Login() {
           <br />
           <button
             type="submit"
-            onClick={loginUsers}
+            onClick={onSuscribe}
             className="button-login"
             value="Login"
           >
@@ -81,10 +82,6 @@ export default function Login() {
             Regresar
           </button>
         </form>
-        <div>
-          <h2>List</h2>
-          {user.map(loginUsers)}
-        </div>
         <ToastContainer />
       </div>
     </div>
