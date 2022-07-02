@@ -1,0 +1,9 @@
+.articles {
+	display: flex;
+	justify-content: left;
+  flex-wrap: wrap;
+}
+
+#imgTop {
+	width: 95%;
+}

@@ -12,6 +12,7 @@
 
 #logoSection {
 	width: 76px;
+	margin-left: 50px;
 }
 
 #formSection {
@@ -27,6 +28,11 @@
 	width: 420px;
 	height: 40px;
 	border-radius: 6px;
+}
+
+.bar {
+	height: 56px;
+	background-color: #fff;
 }
 
 #formSearch:focus {
@@ -53,7 +59,7 @@
 	font-size: 16px;
 	color: #3b49df;
 	font-weight: 500;
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 #createAccountNB:hover {

@@ -1,0 +1,29 @@
+.top3 {
+	width: 90%;
+	height: 70px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-left: 10px;
+	margin-top: 50px;
+}
+
+.menuTop {
+	border-radius: 8px;
+	padding: 10px;
+	font-size: 17px;
+}
+
+.menuTop:hover {
+	background-color: #ffffff;
+	color: #3b49df;
+}
+
+.fBold {
+	font-weight: bold;
+}
+
+.fGray {
+	color: #525252;
+}

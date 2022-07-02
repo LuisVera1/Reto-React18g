@@ -1,0 +1,95 @@
+.cardColor {
+	background-color: #fafafa;
+	margin-top: 20px;
+}
+
+.socialMedia {
+	display: inline;
+	padding: 9px;
+	border-radius: 6px;
+}
+
+.socialMedia:hover {
+	background-color: #e2e3f3;
+}
+
+.overflow {
+	overflow: scroll;
+	height: 300px;
+}
+
+.list-group-item:hover {
+	background-color: rgb(47 58 178);
+}
+
+.font-pcolor {
+	color: rgb(47 58 178);
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.font-pcolor:hover {
+	color: rgb(47 58 178);
+}
+
+.aside-image {
+	width: 100%;
+}
+
+.bd-subnavbar {
+	position: sticky;
+	top: 0;
+}
+
+#CreateAs {
+	border: 1px solid #3b49df;
+	border-radius: 8px;
+	font-size: 18px;
+	color: #3b49df;
+	margin-top: 15px;
+}
+
+#CreateAs:hover {
+	background-color: #3b49df;
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+.MTR {
+	margin-top: 15px;
+	padding-left: 17px;
+	padding-top: 15px;
+}
+
+.SideIC {
+	border-radius: 6px;
+}
+
+.SideIC:hover {
+	background-color: #e2e3f3;
+	color: #2f3ab2;
+	text-decoration: underline;
+}
+
+#LoginNB {
+	border-radius: 8px;
+	font-size: 18px;
+	margin-right: 8px;
+}
+#LoginNB:hover {
+	background-color: #ebecfc;
+	color: #3b49df;
+	text-decoration: underline;
+}
+
+#spacing {
+	margin-top: 60px;
+}
+
+.FBold {
+	font-weight: bold;
+}
+
+.FGray {
+	color: #525252;
+}

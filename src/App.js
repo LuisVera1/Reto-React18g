@@ -1,40 +1,69 @@
+//Imports
+import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import './App.css';
+import navBar from './components/NavBar';
+import navFilters from './components/NavFilters';
+import Stories from './components/CStories';
+import asideLeft from './components/AsideLeft';
+import asideRight from './components/AsideRight';
 
-import navBar from './components/NavBar'
-import card from './components/Cards'
+import { list } from './services/users.js';
 
-
-
-
-
-
-
+import Blog from './pages/Blog';
+import createStorie from './components/CStories';
+import createCard from './components/Cards';
 
 function App() {
-  return (
-    <div className="App">
-      <div class="container g-0">
-        {navBar(1)}
+	const [articles, setArticles] = useState([]);
 
-        <div class="container g-0">
-          
+	useEffect(() => {
+		document.title = 'DEV Community 👩‍💻👨‍💻';
 
+		const getListQuery = async () => {
+			const data = await list;
 
-        </div>
+			const parsedArticles = Object.keys(data).map((key) => {
+				return { id: key, ...data[key] };
+			});
 
+			setArticles(parsedArticles);
+		};
 
+		getListQuery();
+	}, []);
 
+	console.log(articles);
 
+	return (
+		<Routes>
+			<Route
+				path="/"
+				element={
+					<div className="App">
+						{navBar(1)}
+						<div className="container g-0">
+							<div className="row g-0">
+								<aside className="col col-3 g-0">{asideLeft(2)}</aside>
 
+								<main className="col col-6 g-0">
+									{navFilters(1)}
+									{createStorie(articles)}
+									{createCard(articles, 0)} 
+								</main>
 
-
-
-
-
-
-      </div>
-    </div>
-  )
+								<aside className="col col-3 g-0">{asideRight(6)}</aside>
+							</div>
+						</div>
+					</div>
+				}
+			/>
+			<Route path="blog" element={<Blog />} />
+			<Route path="login" element={<p>Login</p>} />
+			<Route path="signup" element={<p>Signup</p>} />
+		</Routes>
+	);
 }
 
 export default App;

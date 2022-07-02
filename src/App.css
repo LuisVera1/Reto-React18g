@@ -1,15 +1,22 @@
 .App {
-  background-color: rgb(241 241 241);
-  height: 100%;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
+	background-color: rgb(241 241 241);
+	height: 200%;
+	/* position: absolute; */
+	left: 0;
+	width: 100%;
 }
 
-.container{
+/* .container{
   border: 1px solid green;
 }
+
+.row{
+  border: 1px solid red;
+}
+
+.col{
+  border: 1px solid royalblue;
+} */
 
 /*
 .App-logo {
