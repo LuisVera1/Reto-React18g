@@ -22,23 +22,18 @@ export default function Login() {
       const parsedUsers = Object.keys(data).map((key) => {
         return { id: key, ...data[key] };
       });
-
+      //console.log(parsedUsers);
       setUser(parsedUsers);
     };
 
     list();
   }, []);
+  console.log(user);
 
-  const loginUsers = (user, index) => (
-    <div key={index}>
-      <p>
-        {user.user} {user.password}
-      </p>
-
-      <button onClick={() => navigate(user.id)}>Detalle</button>
-    </div>
-  );
-
+  function loginUsers(userLogin, passwordLogin) {
+    if (userLogin === user.user && passwordLogin === user.password)
+      console.log("Bienvenido");
+  }
   return (
     <div>
       <div className="container">
@@ -52,7 +47,6 @@ export default function Login() {
               type="email"
               placeholder="Usuario"
               id="floatingTextareaTitle"
-              value={user}
               callback={(e) => setUser(e.target.value)}
             />
           </div>
@@ -64,7 +58,6 @@ export default function Login() {
               type="password"
               placeholder="Password"
               id="floatingTextareaTitle"
-              value={password}
               callback={(e) => setPassword(e.target.value)}
             />
           </div>
@@ -81,10 +74,7 @@ export default function Login() {
             Regresar
           </button>
         </form>
-        <div>
-          <h2>List</h2>
-          {user.map(loginUsers)}
-        </div>
+
         <ToastContainer />
       </div>
     </div>
