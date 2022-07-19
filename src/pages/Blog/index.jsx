@@ -1,5 +1,6 @@
 //Imports
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './Blog.css';
 
 import AsideLBlog from '../../components/AsideLBlog';
@@ -11,6 +12,13 @@ function Blog() {
 	useEffect(() => {
 		document.title = 'DEV Community 👩‍💻👨‍💻';
 	}, []);
+
+	const User = () => {
+    const { userName } = useParams();
+		console.log(userName)
+	}
+
+
 
 	return (
 		<div className="App">

@@ -1,3 +1,5 @@
+const URL = 'https://prueba-post-16377-default-rtdb.firebaseio.com/'
+
 const generateConfig = (body) => {
 	return {
 		method: 'POST',
@@ -25,7 +27,8 @@ export const retrieve = async (id) => {
 };
 
 export const list = async () => {
-	const response = await fetch('https://poised-shift-162315-default-rtdb.firebaseio.com/.json');
+	const response = await fetch(URL + '.json');
+	console.log(URL + '.json')
   const data = await response.json();
 	return data;
 };
