@@ -19,7 +19,6 @@ function Blog() {
 	}
 
 
-
 	return (
 		<div className="App">
 			{NavBar(1)}
